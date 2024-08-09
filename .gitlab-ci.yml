@@ -40,6 +40,7 @@ docker build:
     - docker tag $DOCKER_IMAGE:latest 851725237950.dkr.ecr.ap-northeast-2.amazonaws.com/$DOCKER_IMAGE:$TAG_NAME
     - aws ecr get-login-password --region ap-northeast-2 | docker login --username AWS --password-stdin 851725237950.dkr.ecr.ap-northeast-2.amazonaws.com
     - docker push 851725237950.dkr.ecr.ap-northeast-2.amazonaws.com/$DOCKER_IMAGE:$TAG_NAME
+
 deploy:
   image: python:3.9-slim
   stage: deploy
