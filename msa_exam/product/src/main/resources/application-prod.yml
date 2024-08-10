@@ -1,0 +1,22 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://${RDS_ADDRESS}:3306/msa_exam?serverTimezone=Asia/Seoul&characterEncoding=UTF-8
+    username: ${RDS_USERNAME}
+    password: ${RDS_PASSWORD}
+
+  jpa:
+    properties:
+      hibernate:
+        hbm2ddl.auto: none
+        default_batch_fetch_size: 100
+        dialect: org.hibernate.dialect.MySQLDialect
+    open-in-view: false
+    show-sql: false
+
+  data:
+    redis:
+      host: ${PROD_REDIS}
+      port: ${PROD_REDIS_PORT}
+      username: ${PROD_REDIS_USERNAME}
+      password: ${PROD_REDIS_PASSWORD}
